@@ -5,7 +5,8 @@ const StyledFooter = styled.div`
   width: 100%;
   height: 50px;
   bottom: 0;
-  background: blue;
+  /* background: blue; */
+  border: 1px solid gray;
 `;
 
 function Header() {

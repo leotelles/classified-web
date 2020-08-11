@@ -8,7 +8,8 @@ const StyledMenu = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: green;
+  /* background: gren; */
+  border: 1px solid gray;
 `;
 
 function Menu() {
