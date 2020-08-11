@@ -9,7 +9,9 @@ function Panel() {
       <Link to="/categories">
         <button>Categorias</button>
       </Link>
-      <button>Anúncios</button>
+      <Link to="/adverts">
+        <button>Anúncios</button>
+      </Link>
     </>
   );
 }
