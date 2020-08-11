@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledFooter = styled.div`
   width: 100%;
-  height: 100px;
+  height: 50px;
   background: blue;
 `;
 
