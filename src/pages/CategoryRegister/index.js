@@ -46,7 +46,7 @@ function CategoryRegister() {
 
   return (
     <>
-      <h1>Cadastro de Categorias</h1>
+      <h1>Cadastro de Categoria</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Título</label>
         <input
@@ -64,7 +64,7 @@ function CategoryRegister() {
           onChange={handleInputChange}
         ></input>
 
-        <label htmlFor="uf">Categoria Mãe</label>
+        <label htmlFor="mother">Categoria Mãe</label>
         <select
           name="mother"
           id="mother"

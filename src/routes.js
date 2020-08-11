@@ -20,7 +20,7 @@ const Routes = () => {
         <Route path="/categories" component={CategoryList} />
         <Route path="/ad-create" component={AdvertsRegister} />
         <Route path="/adverts" component={AdvertsList} />
-        <Route path="/ad" component={AdvertsDetail} />
+        <Route path="/ad/:id" component={AdvertsDetail} />
         <Route path="/ads/:category" component={Ads} />
       </Switch>
     </BrowserRouter>

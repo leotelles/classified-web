@@ -3,6 +3,10 @@ import { useParams } from 'react-router-dom';
 
 import api from '../../services/api';
 
+import { DivAdverts } from './styles';
+
+import AdCard from '../../components/AdCard';
+
 function Ads() {
   const { category } = useParams();
 
@@ -15,11 +19,11 @@ function Ads() {
   }, []);
 
   return (
-    <>
+    <DivAdverts>
       {adverts.map((ad) => (
-        <p key={ad.id}>{ad.title}</p>
+        <AdCard key={ad.id} ad={ad} />
       ))}
-    </>
+    </DivAdverts>
   );
 }
 
