@@ -5,7 +5,7 @@ function AdvertsList() {
   return (
     <>
       <h1>Lista de Anúncios</h1>
-      <Link to="/ad">
+      <Link to="/ad-create">
         <button>Novo Anúncio</button>
       </Link>
     </>
