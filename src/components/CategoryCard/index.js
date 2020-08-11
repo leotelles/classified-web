@@ -20,7 +20,7 @@ function CategoryCard({ category }) {
 
       {subCategories.map((sub) => (
         <p key={sub.id}>
-          <Link to="/">{sub.title}</Link>
+          <Link to={`/ads/${sub.id}`}>{sub.title}</Link>
         </p>
       ))}
     </CategoryStyle>

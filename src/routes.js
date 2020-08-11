@@ -8,6 +8,7 @@ import CategoryList from './pages/CategoryList';
 import AdvertsRegister from './pages/AdvertsRegister';
 import AdvertsList from './pages/AdvertsList';
 import AdvertsDetail from './pages/AdvertsDetail';
+import Ads from './pages/Ads';
 
 const Routes = () => {
   return (
@@ -20,6 +21,7 @@ const Routes = () => {
         <Route path="/ad-create" component={AdvertsRegister} />
         <Route path="/adverts" component={AdvertsList} />
         <Route path="/ad" component={AdvertsDetail} />
+        <Route path="/ads/:category" component={Ads} />
       </Switch>
     </BrowserRouter>
   );
