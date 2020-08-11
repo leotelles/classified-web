@@ -20,7 +20,7 @@ function AdvertsRegister() {
   });
 
   useEffect(() => {
-    api.get('categories/1').then((response) => {
+    api.get('categories-all').then((response) => {
       setCategories(response.data);
     });
   }, []);

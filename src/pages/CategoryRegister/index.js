@@ -16,7 +16,7 @@ function CategoryRegister() {
   });
 
   useEffect(() => {
-    api.get('categories').then((response) => {
+    api.get('categories-all').then((response) => {
       setMothers(response.data);
     });
   }, []);

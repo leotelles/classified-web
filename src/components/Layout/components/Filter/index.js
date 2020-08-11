@@ -24,7 +24,7 @@ function Filter() {
   });
 
   useEffect(() => {
-    api.get('categories').then((response) => {
+    api.get('categories-all').then((response) => {
       setCategories(response.data);
     });
   }, []);
