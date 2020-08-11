@@ -8,6 +8,7 @@ function CategoryRegister() {
 
   const [formData, setFormData] = useState({
     title: '',
+    level: 0,
   });
 
   function handleInputChange(event) {
@@ -18,13 +19,9 @@ function CategoryRegister() {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    const { title } = formData;
+    console.log('entrou');
 
-    const data = new FormData();
-
-    data.append('title', title);
-
-    await api.post('categories', data);
+    await api.post('categories', formData);
 
     alert('Categoria Criada!');
 
@@ -42,6 +39,16 @@ function CategoryRegister() {
           name="title"
           onChange={handleInputChange}
         ></input>
+
+        <label htmlFor="level">Nível</label>
+        <input
+          type="number"
+          id="level"
+          name="level"
+          onChange={handleInputChange}
+        ></input>
+
+        <button type="submit">Salvar Dados</button>
       </form>
     </>
   );
