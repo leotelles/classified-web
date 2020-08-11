@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import hair from '../../assets/hair.jpg';
@@ -23,9 +24,11 @@ const AdCard = ({ ad }) => {
       <ImageStyle src={hair} />
       <DescriptionStyle>{ad.title}</DescriptionStyle>
       <PriceStyle>{formatedPrice}</PriceStyle>
-      <DivBttonsStyle>
-        <DetailsStyle>Ver Detalhes</DetailsStyle>
-      </DivBttonsStyle>
+      <Link to={`/ad/${ad.id}`}>
+        <DivBttonsStyle>
+          <DetailsStyle>Ver Detalhes</DetailsStyle>
+        </DivBttonsStyle>
+      </Link>
     </AdStyle>
   );
 };
