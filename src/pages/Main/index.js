@@ -9,17 +9,10 @@ import api from '../../services/api';
 
 const Main = () => {
   const [categories, setCategories] = useState([]);
-  const [subCategories, setSubCategories] = useState([]);
 
   useEffect(() => {
     api.get('categories').then((response) => {
       setCategories(response.data);
-    });
-  }, []);
-
-  useEffect(() => {
-    api.get('categories/1').then((response) => {
-      setSubCategories(response.data);
     });
   }, []);
 
@@ -28,11 +21,7 @@ const Main = () => {
       <Layout>
         <DivCategories>
           {categories.map((category) => (
-            <CategoryCard
-              key={category.id}
-              category={category}
-              subCategories={subCategories}
-            />
+            <CategoryCard key={category.id} category={category} />
           ))}
         </DivCategories>
       </Layout>

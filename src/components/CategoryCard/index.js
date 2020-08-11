@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import { CategoryStyle } from './styles';
 
-function CategoryCard({ category, subCategories }) {
+import api from '../../services/api';
+
+function CategoryCard({ category }) {
+  const [subCategories, setSubCategories] = useState([]);
+
+  useEffect(() => {
+    api.get(`categories/${category.id}`).then((response) => {
+      setSubCategories(response.data);
+    });
+  }, []);
+
   return (
     <CategoryStyle>
       <h2>{category.title}</h2>
 
       {subCategories.map((sub) => (
-        <p>{sub.title}</p>
+        <p key={sub.id}>
+          <Link to="/">{sub.title}</Link>
+        </p>
       ))}
     </CategoryStyle>
   );
