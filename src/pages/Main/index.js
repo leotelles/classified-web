@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import Layout from '../../components/Layout';
+
 import CategoryCard from '../../components/CategoryCard';
 import { DivCategories } from './styles';
 
@@ -15,11 +17,15 @@ const Main = () => {
   }, []);
 
   return (
-    <DivCategories>
-      {categories.map((category) => (
-        <CategoryCard key={category.id} category={category} />
-      ))}
-    </DivCategories>
+    <>
+      <Layout>
+        <DivCategories>
+          {categories.map((category) => (
+            <CategoryCard key={category.id} category={category} />
+          ))}
+        </DivCategories>
+      </Layout>
+    </>
   );
 };
 
