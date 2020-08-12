@@ -12,6 +12,13 @@ function AdvertsList() {
     });
   }, []);
 
+  function handleDelete(id) {
+    api.delete(`adverts/${id}`).then(() => {
+      const newAdverts = adverts.filter((a) => a.id !== id);
+      setAdverts(newAdverts);
+    });
+  }
+
   return (
     <>
       <h1>Lista de Anúncios</h1>
@@ -20,7 +27,10 @@ function AdvertsList() {
       </Link>
       <ul>
         {adverts.map((ad) => (
-          <li>{ad.title}</li>
+          <li>
+            {ad.title}
+            <button onClick={() => handleDelete(ad.id)}>Remover</button>
+          </li>
         ))}
       </ul>
     </>

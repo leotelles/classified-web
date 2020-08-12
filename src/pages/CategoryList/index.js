@@ -12,6 +12,13 @@ function CategoryList() {
     });
   }, []);
 
+  function handleDelete(id) {
+    api.delete(`categories/${id}`).then(() => {
+      const newcategories = categories.filter((c) => c.id !== id);
+      setCategories(newcategories);
+    });
+  }
+
   return (
     <>
       <h1>Lista de Categorias</h1>
@@ -20,7 +27,10 @@ function CategoryList() {
       </Link>
       <ul>
         {categories.map((category) => (
-          <li>{category.title}</li>
+          <li>
+            {category.title}
+            <button onClick={() => handleDelete(category.id)}>Remover</button>
+          </li>
         ))}
       </ul>
     </>
